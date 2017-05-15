@@ -8,16 +8,16 @@ cd /home/pi &&
 yes | sudo DEBIAN_FRONTEND=noninteractive apt-get -yq update &&
 yes | sudo DEBIAN_FRONTEND=noninteractive apt-get -yq upgrade &&
 # Install packages.
-yes | sudo DEBIAN_FRONTEND=noninteractive apt-get -yq install gcc libasound2-dev python3-dev
+yes | sudo DEBIAN_FRONTEND=noninteractive apt-get -yq install gcc libasound2-dev python3-dev &&
 
 # Download `pyalsaaudio` source codes.
-git clone https://github.com/larsimmisch/pyalsaaudio.git
+git clone https://github.com/larsimmisch/pyalsaaudio.git &&
 
 # Change directory to `/home/pi/pyalsaaudio`.
-cd /home/pi/pyalsaaudio
+cd /home/pi/pyalsaaudio &&
 
 # Compile `pyalsaaudio` source codes.
-python3 setup.py build
+python3 setup.py build &&
 
 # Install `pyalsaaudio` source codes.
 python3 setup.py install
