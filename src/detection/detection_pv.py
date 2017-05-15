@@ -63,7 +63,7 @@ class detection_pv(mod_thread):
         If using Linux Raspbian then use PyAudio.
         If using Linux then use `pyalsaaudio`.
         """
-        if platform == "linux" or platform == "linux2" and not global_var.use_rpi[global_var.runtime]:
+        if (platform == "linux" or platform == "linux2") and not manip_str.convert_str_to_bool(global_var.use_rpi[global_var.runtime]):
             self.mic = alsaaudio.PCM(type=alsaaudio.PCM_CAPTURE)
             self.mic.setchannels(channel)
             self.mic.setformat(format_alsa)
@@ -75,7 +75,7 @@ class detection_pv(mod_thread):
                 format            =format_pa,
                 frames_per_buffer =self.period,
                 input             =True,
-                input_device_index=2 if manip_str.convert_str_to_bool(global_var.use_rpi[global_var.runtime]) else None,
+                input_device_index=2 if manip_str.convert_str_to_bool(manip_str.convert_str_to_bool(global_var.use_rpi[global_var.runtime])) else None,
                 rate              =sample_rate
             )
 
@@ -123,7 +123,7 @@ class detection_pv(mod_thread):
         )
 
     def stream(self):
-        if platform == "linux" or platform == "linux2" and not global_var.use_rpi[global_var.runtime]:
+        if (platform == "linux" or platform == "linux2") and not manip_str.convert_str_to_bool(global_var.use_rpi[global_var.runtime]):
             length, self.stream_data = self.mic.read()
         else:
             self.stream_data = self.mic.read(
