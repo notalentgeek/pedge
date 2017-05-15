@@ -1,0 +1,10 @@
+*.spec
+__pycache__
+bin
+build
+cv2.so
+include
+lib
+log
+pip-selfcheck.json
+rethinkdb_data

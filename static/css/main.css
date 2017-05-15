@@ -1,0 +1,70 @@
+.dataTables_length > label {
+  display:none;
+}
+.nice_background {
+  background-color:#F8F8F8;
+  background-image:url("../asset/black-twill.png");
+}
+@media screen and (orientation: landscape){
+  .main {
+    height:100%;
+    width:50%;
+  }
+  .pv_graph {
+    height:50%;
+    width:100%;
+  }
+  #main_container {
+    flex-direction:row;
+  }
+  #mic_graph_container {
+    flex-direction:column;
+    height:100%;
+    width:100%;
+  }
+  #qr_code {
+    height:100%;
+    width:50%;
+  }
+}
+@media screen and (orientation: portrait){
+  .main {
+    height:50%;
+    width:100%;
+  }
+  .pv_graph {
+    height:100%;
+    width:50%;
+  }
+  #main_container {
+    flex-direction:column;
+  }
+  #mic_graph_container {
+    flex-direction:row;
+    height:100%;
+    width:100%;
+  }
+  #graph_pitch {
+    border-right:2px solid rgba(0, 0, 0, 0.5);
+  }
+  #graph_volume {
+    border-left:2px solid rgba(0, 0, 0, 0.5);
+  }
+  #qr_code {
+    height:50%;
+    width:100%;
+  }
+}
+body,html {
+  height:100%;
+  margin:0;
+  overflow:hidden;
+  padding:0;
+  width:100%;
+}
+button {
+  border-radius: 0 !important;
+}
+div {
+  border: 2px none red;
+}

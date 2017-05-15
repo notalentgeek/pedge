@@ -1,0 +1,5 @@
+docopt
+flask
+flask-socketio
+rethinkdb
+tzlocal

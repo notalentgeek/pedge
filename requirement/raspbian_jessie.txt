@@ -1,0 +1,12 @@
+aubio
+docopt
+flask
+flask-socketio
+numpy
+pyaudio
+pyinstaller
+python-lirc
+rethinkdb
+tzlocal
+virtualenv
+virtualenvwrapper

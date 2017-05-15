@@ -1,0 +1,19 @@
+.pv_graph .axis {
+  stroke-width:3;
+}
+.pv_graph .axis .domain {
+  fill:none;
+  stroke:black;
+}
+.pv_graph .axis .tick line {
+  stroke:black;
+}
+.pv_graph .axis .tick text {
+  fill:black;
+  font-size:1.5em;
+}
+.pv_graph .path {
+  fill:none;
+  stroke:black;
+  stroke-width:4.5;
+}
