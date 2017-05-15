@@ -14,7 +14,7 @@ sudo chmod +x /home/pi/pedge/script/raspbian_jessie/* &&
 sudo /home/pi/pedge/script/raspbian_jessie/prevent_screen_saver.sh &&
 
 # Setup `cron`.
-sudo /home/pi/pedge/script/raspbian_jessie/cron.sh &&
+#sudo /home/pi/pedge/script/raspbian_jessie/cron.sh &&
 
 # Setup `pyalsaaudio`.
 sudo /home/pi/pedge/script/raspbian_jessie/pyalsaaudio.sh &&
