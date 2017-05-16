@@ -1,4 +1,5 @@
 *.spec
+/build
 __pycache__
 bin
 cv2.so
