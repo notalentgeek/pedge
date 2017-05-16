@@ -356,10 +356,12 @@ if __name__ == "__main__":
     """ If `https == True` change all `http` into `https` in `./templates/index.html`.
     If `https == False` change all `https` into `http` in `./templates/index.html`.
     """
+    """
     if https:
         manip_str.file_search_and_replace_exact("./templates/index.html", "http", "https")
     else    :
         manip_str.file_search_and_replace_exact("./templates/index.html", "https", "http")
+    """
 
     if online:
         if https: socket_io.run(app, host="0.0.0.0", ssl_context=https_context) # Start with HTTPS.
