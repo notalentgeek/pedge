@@ -37,6 +37,7 @@ class detection_presence_ir_send(mod_thread):
         while not self.kill_me:
             self.counter_tick = self.counter_tick + 1
             if self.counter_tick > self.interval_tick:
+                print("ir!")
                 self.counter_tick = 0
                 subprocess(
                     [
@@ -54,6 +55,11 @@ class detection_presence_ir_receive(mod_thread):
         _array_thread,
         _name_thread
     ):
+
+        # Restart LIRC service.
+        # This is very important.
+        subp.call(["sudo /etc/init.d/lirc stop && timeout 2s  mode2 -d /dev/lirc0 & wait && sudo /etc/init.d/lirc restart"], shell=True)
+
         """ Setup super class. """
         _array_thread.append(self)
         mod_thread.__init__(
