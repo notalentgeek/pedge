@@ -202,6 +202,10 @@ if __name__ == "__main__":
                 database.create_db   (c_temp, name_db)
                 database.create_table(c_temp, global_var.name_table_client, name_db)
 
+                data_sent    = []
+                table_client = database.get_table(c_temp, global_var.name_table_client, name_db)
+                input_latest = get_input_latest(c_temp, name_db)
+
     @socket_io.on("request_input_to_database")
     def request_input_to_database(_data_received):
         if not no_db:
