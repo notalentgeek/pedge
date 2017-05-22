@@ -69,7 +69,7 @@ class detection_presence_ir_receive(mod_thread):
         value_presence_temp = lirc.nextcode()
         for i in value_presence_temp:
             if not i in self.value_presence:
-                self.value_presence.append(value_presence_temp)
+                self.value_presence.append(i)
                 self.value_presence.sort()
 
 class detection_presence_ir_send(mod_thread):
