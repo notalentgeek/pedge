@@ -201,9 +201,6 @@ if __name__ == "__main__":
                 """ Create database and client table if they are not exists. """
                 database.create_db   (c_temp, name_db)
                 database.create_table(c_temp, global_var.name_table_client, name_db)
-                        data_sent.append(i)
-
-                emit("sent_input", data_sent)
 
     @socket_io.on("request_input_to_database")
     def request_input_to_database(_data_received):
