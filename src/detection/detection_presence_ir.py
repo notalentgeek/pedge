@@ -40,8 +40,8 @@ class detection_presence_ir_send(mod_thread):
                 self.counter_tick = 0
                 subprocess(
                     [
-                        "irsend SEND_ONEC {} {}".format(
-                            global_var.name_application,
+                        "irsend SEND_ONCE {} {}".format(
+                            "pysoc", # Change later to `global_var.name_application`.
                             global_var.key_ir[config.runtime]
                         )
                     ],
