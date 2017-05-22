@@ -92,7 +92,7 @@ if __name__ == "__main__":
            not manip_str.convert_str_to_bool(global_var.no_detection_volume[global_var.runtime]):
             detection_pv(array_thread, "detection_pv", di)
 
-        if not manip_str.convert_str_to_bool(global_var.use_rpi[global_var.runtime]):
+        if manip_str.convert_str_to_bool(global_var.use_rpi[global_var.runtime]):
             if not manip_str.convert_str_to_bool(global_var.no_detection_presence[global_var.runtime]):
                 print("test"*50)
                 from detection_presence_ir import detection_presence_ir_receive
