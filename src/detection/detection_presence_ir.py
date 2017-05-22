@@ -91,7 +91,6 @@ class detection_presence_ir_send(mod_thread):
         while not self.kill_me:
             self.counter_tick = self.counter_tick + 1
             if self.counter_tick > self.interval_tick:
-                print("ir!")
                 self.counter_tick = 0
                 subprocess.call(
                     [
