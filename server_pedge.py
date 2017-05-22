@@ -1,11 +1,11 @@
-"""pysoc_server
+"""server_pedge
 
 Usage:
-    pysoc_server.py (--help|-h)
-    pysoc_server.py (--version|-v)
-    pysoc_server.py [--dbh=<dbhv>|--dbn=<dbnv>|--nodb|--tout=<toutv>]...
-    pysoc_server.py [--cert=<certv>|--key=<keyv>]...
-    pysoc_server.py [--https|-o]...
+    server_pedge.py (--help|-h)
+    server_pedge.py (--version|-v)
+    server_pedge.py [--dbh=<dbhv>|--dbn=<dbnv>|--nodb|--tout=<toutv>]...
+    server_pedge.py [--cert=<certv>|--key=<keyv>]...
+    server_pedge.py [--https|-o]...
 
 Options:
     --help -h      Refer to this help manual.
@@ -194,33 +194,7 @@ if __name__ == "__main__":
                 emit("sent_input", data_sent)
 
     @socket_io.on("request_input_latest")
-    def request_input_latest():
-        if not no_db:
-            c_temp = database.conn(host_db, timeout)
-            if not no_db:
-                """ Create database and client table if they are not exists. """
-                database.create_db   (c_temp, name_db)
-                database.create_table(c_temp, global_var.name_table_client, name_db)
-
-                data_sent    = []
-                table_client = database.get_table(c_temp, global_var.name_table_client, name_db)
-                input_latest = get_input_latest(c_temp, name_db)
-
-                for i in table_client:
-                    if i.get(global_var.name_column_dt) == input_latest:
-                        name_client_temp = i.get(global_var.name_column_name_client)
-                        face_temp        = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_face    , name_client_temp), name_db)
-                        pitch_temp       = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_pitch   , name_client_temp), name_db)
-                        presence_temp    = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_presence, name_client_temp), name_db)
-                        volume_temp      = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_volume  , name_client_temp), name_db)
-                        #i[global_var.name_column_dt] = dt;
-                        if type(face_temp)     is not list: i[global_var.name_table_face]     = face_temp
-                        if type(pitch_temp)    is not list: i[global_var.name_table_pitch]    = pitch_temp
-                        if type(presence_temp) is not list: i[global_var.name_table_presence] = presence_temp
-                        if type(volume_temp)   is not list: i[global_var.name_table_volume]   = volume_temp
-                        data_sent.append(i)
-
-                emit("sent_input", data_sent)
+    def request_input_latest(): pass
 
     @socket_io.on("request_input_to_database")
     def request_input_to_database(_data_received):
