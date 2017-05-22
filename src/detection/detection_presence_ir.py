@@ -7,6 +7,7 @@ sys.path.append("../loose_lib/python-ipy")
 sys.path.append("../manip")
 
 from mod_thread import mod_thread
+from timer      import timer_x_second
 
 import database
 import global_var
