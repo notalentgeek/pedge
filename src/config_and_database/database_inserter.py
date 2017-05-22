@@ -75,7 +75,6 @@ class database_inserter(mod_thread):
                 `"presence"` detection. The IR key received from the running
                 detection class should be matched with client name.
                 """
-                print(detection)
                 if detection == global_var.name_table_presence:
                     value_temp = []
                     print(value)
