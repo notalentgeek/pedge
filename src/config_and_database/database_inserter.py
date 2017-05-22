@@ -76,11 +76,11 @@ class database_inserter(mod_thread):
                 detection class should be matched with client name.
                 """
                 if detection == global_var.name_table_presence:
+                    print(value)
                     value_temp = []
                     if type(value) == str:
                         value = manip_str.convert_str_to_list(value)
                     for i in value:
-                        print(value)
                         value_temp.append(database.get_doc_first_value(
                             self.c,
                             value,
