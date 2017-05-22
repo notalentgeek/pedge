@@ -21,9 +21,8 @@ class detection_presence_ir_receive(mod_thread):
         _database_inserter
     ):
 
-        # Restart LIRC service.
-        # This is very important.
-        subp.call(["sudo /etc/init.d/lirc stop && timeout 2s  mode2 -d /dev/lirc0 & wait && sudo /etc/init.d/lirc restart"], shell=True)
+        """ Restart LIRC service. This is very important. """
+        subprocess.call(["sudo /etc/init.d/lirc stop && timeout 2s  mode2 -d /dev/lirc0 & wait && sudo /etc/init.d/lirc restart"], shell=True)
 
         """ Setup super class. """
         _array_thread.append(self)
