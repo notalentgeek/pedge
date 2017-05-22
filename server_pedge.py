@@ -218,6 +218,7 @@ if __name__ == "__main__":
                         print("="*50)
                         print(name_db)
                         face_temp        = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_face    , name_client_temp), name_db)
+                        print(face_temp)
                         #pitch_temp       = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_pitch   , name_client_temp), name_db)
                         #presence_temp    = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_presence, name_client_temp), name_db)
                         #volume_temp      = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_volume  , name_client_temp), name_db)
@@ -228,6 +229,7 @@ if __name__ == "__main__":
                         #if type(volume_temp)   is not list: i[global_var.name_table_volume]   = volume_temp
                         data_sent.append(i)
 
+                print(data_sent)
                 emit("sent_input", data_sent)
 
     @socket_io.on("request_input_to_database")
