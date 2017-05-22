@@ -83,7 +83,7 @@ class database_inserter(mod_thread):
                     for i in value:
                         value_temp.append(database.get_doc_first_value(
                             self.c,
-                            value,
+                            i,
                             global_var.name_column_key_ir,
                             global_var.name_column_name_client,
                             global_var.name_table_client,
