@@ -212,7 +212,7 @@ if __name__ == "__main__":
                         face_temp        = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_face    , name_client_temp), name_db)
                         pitch_temp       = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_pitch   , name_client_temp), name_db)
                         presence_temp    = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_presence, name_client_temp), name_db)
-                        volume_temp      = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_volume  , name_client_temp), name_db)
+                        #volume_temp      = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_volume  , name_client_temp), name_db)
                         #i[global_var.name_column_dt] = dt;
                         #if type(face_temp)     is not list: i[global_var.name_table_face]     = face_temp
                         #if type(pitch_temp)    is not list: i[global_var.name_table_pitch]    = pitch_temp
