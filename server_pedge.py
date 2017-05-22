@@ -209,11 +209,11 @@ if __name__ == "__main__":
                 for i in table_client:
                     if i.get(global_var.name_column_dt) == input_latest:
                         name_client_temp = i.get(global_var.name_column_name_client)
-                        #face_temp        = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_face    , name_client_temp), name_db)
+                        face_temp        = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_face    , name_client_temp), name_db)
                         #print(face_temp)
-                        pitch_temp       = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_pitch   , name_client_temp), name_db)
+                        #pitch_temp       = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_pitch   , name_client_temp), name_db)
                         #presence_temp    = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_presence, name_client_temp), name_db)
-                        volume_temp      = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_volume  , name_client_temp), name_db)
+                        #volume_temp      = database.get_doc_first_value(c_temp, input_latest, global_var.name_column_dt, global_var.name_column_value_detection, "{}_{}".format(global_var.name_table_volume  , name_client_temp), name_db)
                         #i[global_var.name_column_dt] = dt;
                         #if type(face_temp)     is not list: i[global_var.name_table_face]     = face_temp
                         #if type(pitch_temp)    is not list: i[global_var.name_table_pitch]    = pitch_temp

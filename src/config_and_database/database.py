@@ -518,6 +518,8 @@ def get_doc_first_value(
             l = r.db(_name_db).table(_name_table).filter(
                     { _name_column: _value }).run(_conn)
 
+            print(l)
+
             return t1v(l, _name_column_target)
         except r.errors.ReqlDriverError:
             _conn.reconnect()
