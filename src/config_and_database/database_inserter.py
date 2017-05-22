@@ -131,7 +131,7 @@ class database_inserter(mod_thread):
                                 global_var.name_client[global_var.runtime],
                                 global_var.key_ir[global_var.runtime],
                                 global_var.name_column_name_client,
-                                global_var.name_column_dt,
+                                global_var.name_column_key_ir,
                                 global_var.name_table_client,
                                 global_var.name_db[global_var.runtime],
                                 True
