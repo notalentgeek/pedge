@@ -61,6 +61,9 @@ class detection_presence_ir_receive(mod_thread):
                     )
                 self.value_presence = []
 
+        if self.kill_me:
+            subprocess.call(["sudo /etc/init.d/lirc stop"], shell=True)
+
     def stream(self):
         value_presence_temp = lirc.nextcode()
         for i in value_presence_temp:
