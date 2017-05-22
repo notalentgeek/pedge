@@ -42,7 +42,7 @@ class detection_presence_ir_receive(mod_thread):
         self.value_presence = []
 
         """ Initiate LIRC. """
-        lirc.init(config.name_application, blocking=False)
+        lirc.init("pysoc", blocking=False) # Change later!
 
     def run(self):
         while not self.kill_me:
@@ -97,7 +97,7 @@ class detection_presence_ir_send(mod_thread):
                     [
                         "irsend SEND_ONCE {} {}".format(
                             "pysoc", # Change later to `global_var.name_application`.
-                            global_var.key_ir[config.runtime]
+                            global_var.key_ir[global_var.runtime]
                         )
                     ],
                     shell=True
