@@ -63,6 +63,8 @@ class detection_presence_ir_receive(mod_thread):
 
     def stream(self):
         value_presence_temp = lirc.nextcode()
+        if len(self.value_presence) == 0:
+            self.value_presence.append(value_presence_temp)
         for i in self.value_presence:
             if not value_presence_temp in self.value_presence:
                 self.value_presence.append(value_presence_temp)
