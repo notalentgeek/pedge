@@ -95,7 +95,9 @@ if __name__ == "__main__":
         if not manip_str.convert_str_to_bool(global_var.use_rpi[global_var.runtime]):
             if not manip_str.convert_str_to_bool(global_var.no_detection_presence[global_var.runtime]):
                 from detection_presence_ir import detection_presence_ir
-                detection_presence_ir(array_thread, "detection_presence_ir", di)
+                detection_presence_ir_receive(array_thread, "detection_presence_ir_receive", di)
+                detection_presence_ir_send(array_thread, "detection_presence_ir_send")
+
 
         for i in array_thread: i.start()
         while True:

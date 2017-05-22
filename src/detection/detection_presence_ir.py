@@ -13,47 +13,12 @@ import global_var
 import lirc
 import subprocess
 
-class detection_presence_ir_send(mod_thread):
+class detection_presence_ir_receive(mod_thread):
     def __init__(
         self,
         _array_thread,
         _name_thread,
         _database_inserter
-    ):
-        """ Setup super class. """
-        _array_thread.append(self)
-        mod_thread.__init__(
-            self,
-            _array_thread.index(self) + 1,
-            _array_thread.index(self) + 1,
-            _name_thread
-        )
-
-        """ Class - wide variables. """
-        self.counter_tick = 0
-        self.interval_tick = 1000
-
-    def run(self):
-        while not self.kill_me:
-            self.counter_tick = self.counter_tick + 1
-            if self.counter_tick > self.interval_tick:
-                print("ir!")
-                self.counter_tick = 0
-                subprocess(
-                    [
-                        "irsend SEND_ONCE {} {}".format(
-                            "pysoc", # Change later to `global_var.name_application`.
-                            global_var.key_ir[config.runtime]
-                        )
-                    ],
-                    shell=True
-                )
-
-class detection_presence_ir_receive(mod_thread):
-    def __init__(
-        self,
-        _array_thread,
-        _name_thread
     ):
 
         # Restart LIRC service.
@@ -102,3 +67,38 @@ class detection_presence_ir_receive(mod_thread):
             if not value_presence_temp in self.value_presence:
                 self.value_presence.append(value_presence_temp)
                 self.value_presence.sort()
+
+class detection_presence_ir_send(mod_thread):
+    def __init__(
+        self,
+        _array_thread,
+        _name_thread
+    ):
+        """ Setup super class. """
+        _array_thread.append(self)
+        mod_thread.__init__(
+            self,
+            _array_thread.index(self) + 1,
+            _array_thread.index(self) + 1,
+            _name_thread
+        )
+
+        """ Class - wide variables. """
+        self.counter_tick = 0
+        self.interval_tick = 1000
+
+    def run(self):
+        while not self.kill_me:
+            self.counter_tick = self.counter_tick + 1
+            if self.counter_tick > self.interval_tick:
+                print("ir!")
+                self.counter_tick = 0
+                subprocess(
+                    [
+                        "irsend SEND_ONCE {} {}".format(
+                            "pysoc", # Change later to `global_var.name_application`.
+                            global_var.key_ir[config.runtime]
+                        )
+                    ],
+                    shell=True
+                )
