@@ -201,13 +201,6 @@ if __name__ == "__main__":
                 """ Create database and client table if they are not exists. """
                 database.create_db   (c_temp, name_db)
                 database.create_table(c_temp, global_var.name_table_client, name_db)
-
-                data_sent    = []
-                table_client = database.get_table(c_temp, global_var.name_table_client, name_db)
-                input_latest = get_input_latest(c_temp, name_db)
-
-                for i in table_client:
-                    if i.get(global_var.name_column_dt) == input_latest:
                         data_sent.append(i)
 
                 emit("sent_input", data_sent)
