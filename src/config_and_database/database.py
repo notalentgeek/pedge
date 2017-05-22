@@ -518,12 +518,9 @@ def get_doc_first_value(
             `"Alpha"`, when there are `["Alpha", "Beta"]`).
             """
             if check_table(_conn, _name_table, _name_db):
-                print("correct"*10)
                 l = r.db(_name_db).table(_name_table).filter(
                     { _name_column: _value }).run(_conn)
-            else:
-                print("false"*10)
-                return []
+            else: return []
 
             return t1v(l, _name_column_target)
         except r.errors.ReqlDriverError:
