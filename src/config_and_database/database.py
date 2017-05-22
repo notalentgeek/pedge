@@ -483,7 +483,7 @@ def get_doc_first(
     p = False
     while True:
         try:
-            if check_db(_conn, _name_table, _name_db):
+            if check_table(_conn, _name_table, _name_db):
                 l = r.db(_name_db).table(_name_table).filter(
                     { _name_column: _value }).run(_conn)
             else: return []
@@ -517,7 +517,7 @@ def get_doc_first_value(
             value returned is alphabetically sorted (for example, this returns
             `"Alpha"`, when there are `["Alpha", "Beta"]`).
             """
-            if check_db(_conn, _name_table, _name_db):
+            if check_table(_conn, _name_table, _name_db):
                 l = r.db(_name_db).table(_name_table).filter(
                     { _name_column: _value }).run(_conn)
             else: return []
