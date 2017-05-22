@@ -53,6 +53,7 @@ class detection_presence_ir_receive(mod_thread):
             """
             if self.timer.please_update:
                 if len(self.value_presence) > 0:
+                    print(self.value_presence)
                     database.setup_document(
                         global_var.name_column_dict_detection,
                         global_var.name_table_presence,

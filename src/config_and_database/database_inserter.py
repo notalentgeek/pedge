@@ -77,7 +77,6 @@ class database_inserter(mod_thread):
                 """
                 if detection == global_var.name_table_presence:
                     value_temp = []
-                    print(value)
                     if type(value) == str:
                         value = manip_str.convert_str_to_list(value)
                     for i in value:
